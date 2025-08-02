@@ -1,0 +1,127 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #111827;
+    color: #e5e7eb;
+}
+h1, h2, h3, h4, .font-oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+::-webkit-scrollbar-thumb {
+    background: #fbbf24;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #f59e0b;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#hero {
+    position: relative;
+    overflow: hidden;
+    background-color: #111827;
+}
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.5rem;
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, #fbbf24, #f59e0b) border-box;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+.lightbox.active {
+    display: flex;
+}
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    animation: zoomIn 0.5s ease;
+}
+.lightbox .close-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.lightbox .close-lightbox:hover {
+    transform: scale(1.2);
+}
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes ken-burns {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+    100% {
+        transform: scale(1.1) translate(-2%, 2%);
+    }
+}
+#about-bg {
+    animation: ken-burns 20s ease-out infinite alternate;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizBoost - Сайт-визитка для вашего бизнеса</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <header id="header" class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-oswald font-bold tracking-wider text-amber-400">BIZBOOST</a>
+            <nav class="hidden md:flex space-x-8 text-sm tracking-widest uppercase">
+                <a href="#about" class="hover:text-amber-400 transition-colors">О нас</a>
+                <a href="#services" class="hover:text-amber-400 transition-colors">Услуги</a>
+                <a href="#gallery" class="hover:text-amber-400 transition-colors">Галерея</a>
+                <a href="#contact" class="hover:text-amber-400 transition-colors">Контакты</a>
+            </nav>
+            <a href="#contact" class="hidden md:block bg-amber-400 text-gray-900 font-bold py-2 px-6 rounded-md hover:bg-amber-500 transition-all">Связаться</a>
+            <button id="mobile-menu-button" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
+            <nav class="flex flex-col items-center space-y-4 py-4 text-lg uppercase">
+                <a href="#about" class="hover:text-amber-400">О нас</a>
+                <a href="#services" class="hover:text-amber-400">Услуги</a>
+                <a href="#gallery" class="hover:text-amber-400">Галерея</a>
+                <a href="#contact" class="hover:text-amber-400">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="h-screen flex items-center justify-center">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-content text-center text-white px-6">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-oswald uppercase font-bold tracking-wider leading-tight reveal">Создаем стиль.<br>Подчеркиваем индивидуальность.</h1>
+            <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-gray-300 reveal">Профессиональный подход к каждому клиенту. Откройте для себя лучший сервис в городе.</p>
+            <a href="#services" class="mt-8 inline-block bg-amber-400 text-gray-900 font-bold py-3 px-10 rounded-md hover:bg-amber-500 transition-all text-lg uppercase tracking-wider reveal">Наши услуги</a>
+        </div>
+    </section>
+
+    <section id="about" class="relative py-20 md:py-40 text-white overflow-hidden">
+        <div id="about-bg" class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/2d3748/e2e8f0?text=Наша+История');"></div>
+        <div class="absolute inset-0 bg-black/70"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="hidden md:block"></div>
+
+                <div class="reveal bg-gray-900/70 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-2xl">
+                    <h2 class="text-4xl md:text-5xl font-oswald uppercase font-bold text-amber-400">Наша история</h2>
+                    <div class="w-24 h-1 bg-amber-400 my-6"></div>
+                    <p class="mt-4 text-gray-300">Мы начали свой путь в 2015 году с одной простой идеей: создать место, где качество и сервис стоят на первом месте. Мы — команда увлеченных профессионалов, которые любят свое дело и постоянно совершенствуют свои навыки.</p>
+                    <p class="mt-4 text-gray-300">Для нас важен каждый клиент. Мы стремимся не просто оказать услугу, а подарить эмоции и уверенность в себе. Наша мастерская — это не просто бизнес, это место силы и стиля.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services" class="py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-oswald uppercase font-bold reveal">Наши услуги</h2>
+            <p class="mt-4 max-w-3xl mx-auto text-gray-400 reveal">Мы предлагаем полный спектр услуг для создания вашего идеального образа.</p>
+            <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-gray-800 p-8 rounded-lg shadow-lg text-center reveal transform hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-cut text-4xl text-amber-400"></i>
+                    <h3 class="font-oswald text-2xl mt-4 font-semibold">Классическая стрижка</h3>
+                    <p class="mt-2 text-gray-400">Идеальная форма, которая подчеркнет ваш стиль. Включает мытье и укладку.</p>
+                </div>
+                <div class="service-card bg-gray-800 p-8 rounded-lg shadow-lg text-center reveal transform hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-signature text-4xl text-amber-400"></i>
+                    <h3 class="font-oswald text-2xl mt-4 font-semibold">Ремонт техники</h3>
+                    <p class="mt-2 text-gray-400">Быстрая и качественная диагностика, ремонт любой сложности.</p>
+                </div>
+                <div class="service-card bg-gray-800 p-8 rounded-lg shadow-lg text-center reveal transform hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-coffee text-4xl text-amber-400"></i>
+                    <h3 class="font-oswald text-2xl mt-4 font-semibold">Ароматный кофе</h3>
+                    <p class="mt-2 text-gray-400">Лучшие сорта кофе со всего мира, приготовленные с любовью.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 md:py-32 bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-oswald uppercase font-bold reveal">Галерея работ</h2>
+            <p class="mt-4 max-w-3xl mx-auto text-gray-400 reveal">Взгляните на наши лучшие работы и почувствуйте атмосферу.</p>
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="reveal"><img src="https://placehold.co/400x500/2d3748/e2e8f0?text=Работа+1" alt="Галерея 1" class="gallery-item rounded-lg shadow-md w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform" onerror="this.onerror=null;this.src='https://placehold.co/400x500/2d3748/e2e8f0?text=Image+Error';"></div>
+                <div class="reveal"><img src="https://placehold.co/400x500/2d3748/e2e8f0?text=Работа+2" alt="Галерея 2" class="gallery-item rounded-lg shadow-md w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform" onerror="this.onerror=null;this.src='https://placehold.co/400x500/2d3748/e2e8f0?text=Image+Error';"></div>
+                <div class="reveal"><img src="https://placehold.co/400x500/2d3748/e2e8f0?text=Работа+3" alt="Галерея 3" class="gallery-item rounded-lg shadow-md w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform" onerror="this.onerror=null;this.src='https://placehold.co/400x500/2d3748/e2e8f0?text=Image+Error';"></div>
+                <div class="reveal"><img src="https://placehold.co/400x500/2d3748/e2e8f0?text=Работа+4" alt="Галерея 4" class="gallery-item rounded-lg shadow-md w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform" onerror="this.onerror=null;this.src='https://placehold.co/400x500/2d3748/e2e8f0?text=Image+Error';"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 md:py-32">
+        <div class="container mx-auto px-6">
+             <div class="grid md:grid-cols-2 gap-12">
+                <div class="reveal">
+                    <h2 class="text-4xl md:text-5xl font-oswald uppercase font-bold">Остались вопросы?</h2>
+                    <p class="mt-4 text-gray-400">Заполните форму, и мы свяжемся с вами в ближайшее время. Или позвоните нам прямо сейчас!</p>
+                    <div class="mt-8 space-y-4">
+                        <p><i class="fas fa-phone mr-3 text-amber-400"></i> +7 (999) 123-45-67</p>
+                        <p><i class="fas fa-envelope mr-3 text-amber-400"></i> info@bizboost.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-3 text-amber-400"></i> г. Москва, ул. Тверская, д. 1</p>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <form id="contact-form" class="space-y-6">
+                        <input type="text" name="name" placeholder="Ваше имя" required class="w-full bg-gray-800 border-2 border-gray-700 rounded-md p-3 focus:border-amber-400 focus:outline-none transition-colors">
+                        <input type="email" name="email" placeholder="Ваш Email" required class="w-full bg-gray-800 border-2 border-gray-700 rounded-md p-3 focus:border-amber-400 focus:outline-none transition-colors">
+                        <textarea name="message" placeholder="Ваше сообщение" rows="5" required class="w-full bg-gray-800 border-2 border-gray-700 rounded-md p-3 focus:border-amber-400 focus:outline-none transition-colors"></textarea>
+                        <button type="submit" class="w-full bg-amber-400 text-gray-900 font-bold py-3 px-6 rounded-md hover:bg-amber-500 transition-all uppercase tracking-wider">Отправить</button>
+                    </form>
+                    <div id="form-status" class="mt-4 text-center"></div>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <section id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.393789172313!2d37.61522827741352!3d55.75222019424367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0x86d291e6059427e3!2z0JrRgNC10LzQu9C-0Lkg0L_QvtC70L3Ri9C5!5e0!3m2!1sru!2sru!4v1709822452811!5m2!1sru!2sru" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <footer class="bg-gray-800 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; <span id="year"></span> BizBoost. Все права защищены.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="text-xl hover:text-amber-400 transition-colors"><i class="fab fa-vk"></i></a>
+                <a href="#" class="text-xl hover:text-amber-400 transition-colors"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="text-xl hover:text-amber-400 transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Просмотр изображения">
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
